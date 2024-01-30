@@ -2,7 +2,7 @@
 import 'dart:math';
 import 'dart:typed_data';
 
-import 'package:js/js.dart';
+import 'dart:js_interop';
 import 'package:pointycastle/src/impl/entropy.dart';
 
 import 'node_crypto.dart';
@@ -47,8 +47,7 @@ class _JsBuiltInEntropySource implements EntropySource {
 
   @override
   Uint8List getBytes(int len) {
-    return Uint8List.fromList(
-        List<int>.generate(len, (i) => _src.nextInt(256)));
+    return Uint8List.fromList(List<int>.generate(len, (i) => _src.nextInt(256)));
   }
 }
 

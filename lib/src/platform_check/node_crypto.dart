@@ -2,7 +2,7 @@
 @JS()
 library nodecryto;
 
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 external dynamic require(String id);
 
